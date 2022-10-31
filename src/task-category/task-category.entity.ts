@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { UserEntity } from '../user/user.entity';
 
 @Entity()
 export class TaskCategoryEntity {
@@ -7,4 +8,7 @@ export class TaskCategoryEntity {
 
   @Column()
   name: string;
+
+  @ManyToOne(() => UserEntity, (user) => user.taskCategories)
+  author: UserEntity;
 }

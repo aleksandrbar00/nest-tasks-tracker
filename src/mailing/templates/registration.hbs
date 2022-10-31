@@ -1,0 +1,32 @@
+<style>
+  .greeting {
+    font-size: 18px;
+  }
+
+  .description {
+    margin-top: 22px;
+  }
+
+  .confirm-btn {
+    display: block;
+    margin-top: 18px;
+    padding: 12px 18px;
+    background: #6861ec;
+    color: #fafafa;
+  }
+
+  .confirm-btn:visited, .confirm-btn, .confirm-btn:hover {
+    text-decoration: none;
+  }
+</style>
+
+<p class="greeting">Hey {{name}}</p>
+<p class="description">Please click button or link below to confirm your email</p>
+
+<a href="{{url}}">
+  {{url}}
+</a>
+
+<a class="confirm-btn" href="{{url}}">
+  Confirm account
+</a>

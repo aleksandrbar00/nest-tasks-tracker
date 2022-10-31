@@ -1,4 +1,6 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { TaskCategoryEntity } from '../task-category/task-category.entity';
+import { TaskEntity } from '../tasks/task.entity';
 
 @Entity()
 export class UserEntity {
@@ -19,4 +21,15 @@ export class UserEntity {
 
   @Column()
   isConfirmed: boolean;
+
+  @Column({
+    default: null,
+  })
+  confirmationToken: string;
+
+  @OneToMany(() => TaskCategoryEntity, (taskCategory) => taskCategory.author)
+  taskCategories: TaskCategoryEntity[];
+
+  @OneToMany(() => TaskEntity, (task) => task.author)
+  tasks: TaskEntity[];
 }

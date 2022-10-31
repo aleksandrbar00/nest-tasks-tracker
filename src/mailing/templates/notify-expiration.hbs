@@ -1,0 +1,23 @@
+<style>
+  .greeting {
+    font-size: 18px;
+  }
+
+  .confirm-btn {
+    display: block;
+    margin-top: 18px;
+    padding: 12px 18px;
+    background: #6861ec;
+    color: #fafafa;
+  }
+
+  .confirm-btn:visited, .confirm-btn, .confirm-btn:hover {
+    text-decoration: none;
+  }
+</style>
+
+<p class="greeting">Hey, your task: "{{task}}" will be expired soon!</p>
+
+<a class="confirm-btn" href="{{url}}">
+  Go to tasks
+</a>
